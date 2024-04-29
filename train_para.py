@@ -1,6 +1,6 @@
 # train.py
 import numpy as np
-from NN import NeuralNetwork  # 确保你的神经网络类文件名和类名正确
+from NN import NeuralNetwork  
 from data_loader import load_mnist_images, load_mnist_labels  # 加载数据的函数
 from config import network_config, hyperparameters, data_paths  # 从config.py导入配置
 
