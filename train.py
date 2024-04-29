@@ -1,6 +1,6 @@
 import numpy as np
 from NN import NeuralNetwork  # 导入刚才定义的 NeuralNetwork 类
-from data_loader import load_mnist_images, load_mnist_labels  # 假设你也把数据加载函数放在单独的文件中
+from data_loader import load_mnist_images, load_mnist_labels  
 import matplotlib.pyplot as plt
 
 def plot_history(network):
