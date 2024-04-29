@@ -90,7 +90,7 @@ class NeuralNetwork:
         n_samples = X_train.shape[0]
 
         for epoch in range(num_epochs):
-            # Shuffle the training data
+            # 打乱数据
             indices = np.arange(n_samples)  
             np.random.shuffle(indices)    # [0~n_samples]随机打乱，防止总是以相同的数据顺序进行训练
             X_train_shuffled = X_train[indices]
@@ -105,22 +105,22 @@ class NeuralNetwork:
                 # Forward and backward passes
                 y_pred, cache = self.forward(X_batch)
                 loss = self.cross_entropy_loss(y_pred, y_batch)
-                # Add regularization to the loss
+                # 在损失中加入正则项
                 for i in range(len(self.hidden_sizes) + 1):
                     W = self.params['W' + str(i+1)]
                     loss += 0.5 * reg_lambda * np.sum(W**2)
 
                 grads = self.backward(y_batch, cache)
-                # Add regularization to the gradients
+                # 在梯度中加入正则项
                 for i in range(len(self.hidden_sizes) + 1):
                     grads['W' + str(i+1)] += reg_lambda * self.params['W' + str(i+1)]
 
                 self.update_params(grads, learning_rate)
 
-            # Learning rate decay
+            # 学习率衰减
             learning_rate *= learning_rate_decay
 
-            # Validation
+            # 验证
             val_acc = self.evaluate_accuracy(X_val, y_val)
             if val_acc > best_val_acc:
                 best_val_acc = val_acc
