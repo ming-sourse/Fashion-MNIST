@@ -3,13 +3,13 @@ import matplotlib.pyplot as plt
 import pickle
 from NN import NeuralNetwork
 
-# 定义加载模型的函数
+
 # def load_model(file_name):
 #     with open(file_name, 'rb') as f:
 #         model = pickle.load(f)
 #     return model
 
-# 定义绘制权重和偏置的直方图的函数
+# 绘制权重和偏置的直方图
 def plot_distribution(params, layer_num):
     for param_type, values in params.items():
         plt.figure(figsize=(10, 4))
@@ -20,7 +20,7 @@ def plot_distribution(params, layer_num):
         plt.grid(True)
         plt.show()
 
-# 定义绘制热力图的函数
+# 绘制热力图
 def plot_heatmap(weights, title="Heatmap of Weights"):
     plt.figure(figsize=(8, 6))
     plt.imshow(weights, aspect='auto', cmap='viridis')
@@ -30,7 +30,7 @@ def plot_heatmap(weights, title="Heatmap of Weights"):
     plt.ylabel("Input features")
     plt.show()
 
-# 可视化第一层权重（如果适用）
+# 可视化第一层权重
 def visualize_first_layer_weights(weights):
     num_neurons = weights.shape[1]
     side = int(np.sqrt(weights.shape[0]))
