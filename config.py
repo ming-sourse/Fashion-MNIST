@@ -1,4 +1,4 @@
-# 定义一个字典，存储网络配置和超参数
+# 用字典存储网络配置和超参数
 network_config = {
     "input_size": 784,  # 图像尺寸 (28x28)
     "output_size": 10,  # 类别数 (对于MNIST是10)
@@ -19,7 +19,7 @@ hyperparameters = {
     "learning_rate_decay": 0.95
 }
 
-# 如果需要，可以添加其他配置信息，比如数据加载路径等
+
 data_paths = {
     "images_path": 'Data/train-images-idx3-ubyte',
     "labels_path": 'Data/train-labels-idx1-ubyte'
